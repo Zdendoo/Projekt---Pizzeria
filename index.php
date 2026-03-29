@@ -29,28 +29,7 @@
 </head>
 <body id="home" data-spy="scroll" data-target=".navbar-collapse">
 
-	<!-- start navigation -->
-	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="icon icon-bar"></span>
-					<span class="icon icon-bar"></span>
-					<span class="icon icon-bar"></span>
-				</button>
-				<a href="#home" class="navbar-brand smoothScroll"><strong>PIZZA</strong></a>
-			</div>
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#home" class="smoothScroll">HOME</a></li>
-					<li><a href="#about" class="smoothScroll">ABOUT</a></li>
-					<li><a href="#gallery" class="smoothScroll">GALLERY</a></li>
-					<li><a href="#contact" class="smoothScroll">CONTACT</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- end navigation -->
+<?php include('parts/header.php'); ?>
 
 	<!-- start flexslider -->
 	<div class="flexslider">
@@ -208,27 +187,7 @@
 	</section>
 	<!-- end contact -->
 
-	<!-- start footer -->
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<p>Copyright &copy; 2084 Company Name</p>
-					<hr>
-					<ul class="social-icon">
-						<li><a href="#" class="fa fa-facebook"></a></li>
-						<li><a href="#" class="fa fa-twitter"></a></li>
-						<li><a href="#" class="fa fa-instagram"></a></li>
-						<li><a href="#" class="fa fa-pinterest"></a></li>
-						<li><a href="#" class="fa fa-google"></a></li>
-						<li><a href="#" class="fa fa-github"></a></li>
-						<li><a href="#" class="fa fa-apple"></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- end footer -->
+<?php include('parts/footer.php'); ?>
 
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
