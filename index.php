@@ -1,37 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
+<?php include 'parts/head.php'; ?>
 
-	<title>Pizza - free responsive website template</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-    <meta name="author" content="templatemo">
-    <!-- 
-    Pizza Template
-    http://www.templatemo.com/preview/templatemo_459_pizza
-    -->
-    
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<!-- font-awesome -->
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<!-- custom -->
-	<link rel="stylesheet" href="css/templatemo-style.css">
-	<!-- google font -->
-	<link href='//fonts.googleapis.com/css?family=Signika:400,300,600,700' rel='stylesheet' type='text/css'>
-	<link href='//fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
-
-</head>
 <body id="home" data-spy="scroll" data-target=".navbar-collapse">
 
-<?php include('parts/header.php'); ?>
+<?php include 'parts/header.php'; ?>
 
-	<!-- start flexslider -->
+	
 	<div class="flexslider">
 		<ul class="slides">
 			<li>
@@ -52,9 +25,9 @@
 			</li>
 		</ul>
 	</div>
-	<!-- end flexslider -->
+	
 
-	<!-- start about -->
+	
 	<section id="about" class="templatemo-section templatemo-top-130">
 		<div class="container">
 			<div class="row">
@@ -73,9 +46,9 @@
 			</div>
 		</div>
 	</section>
-	<!-- end about -->
+	
 
-	<!-- start gallery -->
+	
 	<section id="gallery" class="templatemo-section templatemo-light-gray-bg">
 		<div class="container">
 			<div class="row">
@@ -131,9 +104,9 @@
 			</div>
 		</div>
 	</section>
-	<!-- end gallery -->
+	
 
-	<!-- start contact -->
+	
 	<section id="contact" class="templatemo-section">
 		<div class="container">
 			<div class="row">
@@ -185,7 +158,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- end contact -->
+	
 
 <?php include('parts/footer.php'); ?>
 

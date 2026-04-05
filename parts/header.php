@@ -7,14 +7,14 @@
 					<span class="icon icon-bar"></span>
 					<span class="icon icon-bar"></span>
 				</button>
-				<a href="#home" class="navbar-brand smoothScroll"><strong>PIZZA</strong></a>
+				<a href="index.php" class="navbar-brand smoothScroll"><strong>La-Zdenda</strong></a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#home" class="smoothScroll">HOME</a></li>
-					<li><a href="#about" class="smoothScroll">ABOUT</a></li>
-					<li><a href="#gallery" class="smoothScroll">GALLERY</a></li>
-					<li><a href="#contact" class="smoothScroll">CONTACT</a></li>
+					<li><a href="index.php" class="smoothScroll">DOMOV</a></li>
+					<li><a href="about.php" class="smoothScroll">O NÁS</a></li>
+					<li><a href="gallery.php" class="smoothScroll">GALÉRIA</a></li>
+					<li><a href="contact.php" class="smoothScroll">KONTAKT</a></li>
 				</ul>
 			</div>
 		</div>
