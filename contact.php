@@ -52,5 +52,6 @@
 			</div>
 		</div>
 	</section>
-
+	
+<?php include 'parts/script.php'; ?>
 <?php include 'parts/footer.php'; ?>
