@@ -10,19 +10,21 @@
 				</div>
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
-					<form action="#" method="post" role="form">
-						<div class="col-md-6 col-sm-6">
-							<input name="name" type="text" class="form-control" id="name" maxlength="60" placeholder="Name">
-					    	<input name="email" type="email" class="form-control" id="email" placeholder="Email">
-							<input name="message" type="text" class="form-control" id="message" placeholder="Subject">
-						</div>
-						<div class="col-md-6 col-sm-6">
-							<textarea class="form-control" rows="5" placeholder="Message"></textarea>
-						</div>
-						<div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-							<input name="submit" type="submit" class="form-control" id="submit" value="Send">
-						</div>
+
+					<form action="functions.php" method="post" role="form">
+    					<div class="col-md-6 col-sm-6">
+        					<input name="name" type="text" class="form-control" id="name" placeholder="Meno">
+        					<input name="email" type="email" class="form-control" id="email" placeholder="Email">
+       						<input name="subject" type="text" class="form-control" id="subject" placeholder="Predmet">
+   						</div>
+    					<div class="col-md-6 col-sm-6">
+        					<textarea name="message" class="form-control" rows="5" placeholder="Správa"></textarea>
+    					</div>
+    					<div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
+        					<input name="submit" type="submit" class="form-control" id="submit" value="Odoslať">
+    					</div>
 					</form>
+
 				</div>
 				<div class="col-md-2"></div>
 				<div class="col-md-4 col-sm-4">
