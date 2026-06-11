@@ -5,13 +5,11 @@
 					<p>Copyright &copy; 2026 Pizzeria LaZdenda</p>
 					<hr>
 					<ul class="social-icon">
-						<li><a href="#" class="fa fa-facebook"></a></li>
-						<li><a href="#" class="fa fa-twitter"></a></li>
-						<li><a href="#" class="fa fa-instagram"></a></li>
-						<li><a href="#" class="fa fa-pinterest"></a></li>
-						<li><a href="#" class="fa fa-google"></a></li>
-						<li><a href="#" class="fa fa-github"></a></li>
-						<li><a href="#" class="fa fa-apple"></a></li>
+						<li><a href="https://www.facebook.com/pizzerialazdenda" class="fa fa-facebook"></a></li>
+						<li><a href="https://x.com/pizzerialazdena" class="fa fa-twitter"></a></li>
+						<li><a href="https://www.instagram.com/pizzerialazdenda" class="fa fa-instagram"></a></li>
+						<li><a href="https://www.google.com/maps/search/pizzerialaZdenda" class="fa fa-google"></a></li>
+						<li><a href="https://github.com/Zdendoo/Projekt---Pizzeria" class="fa fa-github"></a></li>
 					</ul>
 				</div>
 			</div>
