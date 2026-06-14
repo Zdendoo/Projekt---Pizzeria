@@ -1,19 +1,38 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $meno = $_POST['name'];
-    $email = $_POST['email'];
-    $predmet = $_POST['subject'];
-    $sprava = $_POST['message'];
+declare(strict_types=1);
 
-    echo "<h1>Dáta z formulára:</h1>";
-    echo "<b>Meno:</b> " . $meno . "<br>";
-    echo "<b>Email:</b> " . $email . "<br>";
-    echo "<b>Predmet:</b> " . $predmet . "<br>";
-    echo "<b>Správa:</b> " . $sprava . "<br>";
-    echo "<hr>";
-    echo "<a href='index.php'>Naspäť na úvodnú stránku</a>";
 
+require_once 'classes/Database.php';
+require_once 'classes/Contact.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+    
+   
+    $database = new Database();
+    $db = $database->getConnection();
+    $contactManager = new Contact($db);
+
+    
+    $meno = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $predmet = trim($_POST['subject'] ?? '');
+    $sprava = trim($_POST['message'] ?? '');
+
+    
+    if (!empty($meno) && !empty($email) && !empty($predmet) && !empty($sprava)) {
+        
+        
+        if ($contactManager->create($meno, $email, $predmet, $sprava)) {
+            
+            header("Location: index.php?status=success");
+            exit();
+        } else {
+            echo "chyba pri ukladani spravy...";
+        }
+    } else {
+        echo "vyplnte vsetky polia.";
+    }
 } else { 
     header("Location: index.php");
+    exit();
 }
-?>
