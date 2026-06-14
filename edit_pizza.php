@@ -11,11 +11,11 @@ $pizzaManager = new Pizza($db);
 $error = '';
 $id = (int)($_GET['id'] ?? 0);
 
-// Načítame aktuálne dáta danej pizze, aby sme ich dali do formulára
+
 $pizza = $pizzaManager->getById($id);
 
 if (!$pizza) {
-    die("Pizza s týmto ID neexistuje.");
+    die("pizza s tymto ID neexistuje");
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -58,15 +58,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="nazov" class="form-control" value="<?= htmlspecialchars($pizza['nazov']) ?>" required>
         </div>
         <div class="form-group">
-            <label>Popis (Ingrediencie)</label>
+            <label>Popis</label>
             <textarea name="popis" class="form-control" required><?= htmlspecialchars($pizza['popis']) ?></textarea>
         </div>
         <div class="form-group">
-            <label>Názov obrázka</label>
+            <label>Obrázok</label>
             <input type="text" name="obrazok" class="form-control" value="<?= htmlspecialchars($pizza['obrazok']) ?>" required>
         </div>
         <div class="form-group">
-            <label>Cena (€)</label>
+            <label>Cena</label>
             <input type="number" name="cena" step="0.01" class="form-control" value="<?= htmlspecialchars((string)$pizza['cena']) ?>" required>
         </div>
         <input type="submit" class="btn btn-primary" value="Aktualizovať">

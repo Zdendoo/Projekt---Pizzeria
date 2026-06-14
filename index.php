@@ -6,7 +6,7 @@ $database = new Database();
 $db = $database->getConnection();
 $pizzaManager = new Pizza($db);
 
-// Načítame všetky pizze z DB
+
 $pizzas = $pizzaManager->getAll();
 ?>
 
@@ -71,7 +71,7 @@ $pizzas = $pizzaManager->getAll();
             
             <?php if (empty($pizzas)): ?>
                 <div class="col-md-12 text-center">
-                    <p>Momentálne nemáme v ponuke žiadne pizze. Pridaj nejaké v administrácii!</p>
+                    <p>V ponuke nie su žiadne pizze.</p>
                 </div>
             <?php else: ?>
                 <?php foreach ($pizzas as $pizza): ?>

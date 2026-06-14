@@ -11,14 +11,14 @@ class Database {
     public function getConnection(): PDO {
         if ($this->conn === null) {
             try {
-                // Použijeme charset utf8mb4 pre správne kódovanie diakritiky
+                
                 $this->conn = new PDO(
                     "mysql:host=" . $this->host . ";dbname=" . $this->db_name . ";charset=utf8mb4",
                     $this->username,
                     $this->password,
                     [
-                        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Vyhodí výnimku pri chybe
-                        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC // Vracia dáta ako asociatívne pole
+                        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
                     ]
                 );
             } catch (PDOException $exception) {

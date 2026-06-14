@@ -21,10 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: admin.php?status=success");
             exit();
         } else {
-            $error = 'Chyba pri ukladaní do databázy.';
+            $error = 'Chyba pri ukladaní.';
         }
     } else {
-        $error = 'Prosím, vyplňte všetky polia správne.';
+        $error = 'Vyplňte všetky polia.';
     }
 }
 ?>
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <div class="container" style="max-width: 600px;">
-    <h2>Pridať novú pizzu do ponuky</h2>
+    <h2>Pridať pizzu do ponuky</h2>
     <hr>
     <?php if(!empty($error)): ?>
         <div class="alert alert-danger"><?= $error ?></div>
@@ -50,15 +50,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="nazov" class="form-control" required>
         </div>
         <div class="form-group">
-            <label>Popis (Ingrediencie)</label>
+            <label>Popis</label>
             <textarea name="popis" class="form-control" required></textarea>
         </div>
         <div class="form-group">
-            <label>Názov obrázka (musí byť v zložke images/, napr. gallery-img1.jpg)</label>
-            <input type="text" name="obrazok" class="form-control" placeholder="gallery-img1.jpg" required>
+            <label>Obrázok</label>
+            <input type="text" name="obrazok" class="form-control" required>
         </div>
         <div class="form-group">
-            <label>Cena (€)</label>
+            <label>Cena</label>
             <input type="number" name="cena" step="0.01" class="form-control" required>
         </div>
         <input type="submit" class="btn btn-success" value="Uložiť pizzu">

@@ -1,7 +1,12 @@
 <?php
 declare(strict_types=1);
+session_start();
 
-// Načítame databázu a OBERE triedy (aj Pizzu, aj Kontakty)
+if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
+    header("Location: login.php");
+    exit();
+}
+
 require_once 'classes/Database.php';
 require_once 'classes/Pizza.php';
 require_once 'classes/Contact.php';
@@ -9,11 +14,9 @@ require_once 'classes/Contact.php';
 $database = new Database();
 $db = $database->getConnection();
 
-// Vytvoríme manažérov pre obe entity
 $pizzaManager = new Pizza($db);
 $contactManager = new Contact($db);
 
-// Načítame dáta z oboch tabuliek
 $pizzas = $pizzaManager->getAll();
 $messages = $contactManager->getAll();
 ?>
@@ -34,6 +37,9 @@ $messages = $contactManager->getAll();
                     </h1>
                     <p style="font-size: 1.2em; color: #666;"></p>
                     <hr style="border-top: 2px solid #f39c12; width: 100px; margin: 20px auto;">
+                    <div style="margin-top: -10px; margin-bottom: 30px; text-align: center;">
+                        <a href="logout.php" class="btn btn-danger" style="font-weight: bold; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Odhlásiť sa</a>
+                    </div>
                 </div>
             </div>
 
@@ -41,7 +47,7 @@ $messages = $contactManager->getAll();
                 <div class="row">
                     <div class="col-md-12">
                         <div class="alert alert-success text-center" style="font-weight: 600; border-radius: 4px; border-color: #d6e9c6;">
-                            <i class="fa fa-check-circle"></i> Operácia prebehla úspešne!
+                            <i class="fa fa-check-circle"></i> operacia bola uspesna
                         </div>
                     </div>
                 </div>
@@ -66,7 +72,7 @@ $messages = $contactManager->getAll();
                                     <th style="padding: 12px;">Názov</th>
                                     <th style="padding: 12px;">Popis</th>
                                     <th style="padding: 12px;">Cena</th>
-                                    <th style="padding: 12px; text-align: center;">Akcie</th>
+                                    <th style="padding: 12px; text-align: center;">Zmena</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -91,7 +97,7 @@ $messages = $contactManager->getAll();
                                             <a href="edit_pizza.php?id=<?= $pizza['id'] ?>" class="btn btn-default btn-sm" style="margin-right: 5px; border-color: #ccc;">
                                                 <i class="fa fa-pencil" style="color: #f39c12;"></i> Upraviť
                                             </a>
-                                            <a href="delete_pizza.php?id=<?= $pizza['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Naozaj chcete vymazať túto pizzu?')" style="background-color: #f39c12;">
+                                            <a href="delete_pizza.php?id=<?= $pizza['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Naozaj vymazať túto pizzu?')" style="background-color: #f39c12;">
                                                 <i class="fa fa-trash"></i> Zmazať
                                             </a>
                                         </td>
@@ -121,7 +127,7 @@ $messages = $contactManager->getAll();
                     <div class="table-responsive" style="background: #fff; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
                         <table class="table table-striped" style="margin-bottom: 0;">
                             <thead>
-                                <tr style="background-color: #333; color: #fff;">
+                                <tr style="background-color: #f39c12; color: #fff;">
                                     <th style="padding: 12px; width: 160px;">Dátum</th>
                                     <th style="padding: 12px; width: 180px;">Meno</th>
                                     <th style="padding: 12px; width: 220px;">Email</th>
@@ -131,7 +137,7 @@ $messages = $contactManager->getAll();
                             </thead>
                             <tbody>
                             <?php if(empty($messages)): ?>
-                                <tr><td colspan="5" class="text-center" style="padding: 20px; color: #999;">Žiadne správy od zákazníkov.</td></tr>
+                                <tr><td colspan="5" class="text-center" style="padding: 20px; color: #999;">Žiadne správy.</td></tr>
                             <?php else: ?>
                                 <?php foreach($messages as $msg): ?>
                                     <tr>

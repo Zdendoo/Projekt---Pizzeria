@@ -13,7 +13,6 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="index.php" class="smoothScroll">DOMOV</a></li>
 					<li><a href="about.php" class="smoothScroll">O NÁS</a></li>
-					<li><a href="contact.php" class="smoothScroll">KONTAKT</a></li>
 					<li><a href="admin.php" class="smoothScroll">ADMIN</a></li>
 				</ul>
 			</div>
