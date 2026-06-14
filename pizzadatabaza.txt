@@ -1,0 +1,32 @@
+-- 1. Vytvorenie databázy (ak ešte neexistuje)
+CREATE DATABASE IF NOT EXISTS `pizzadatabaza` 
+CHARACTER SET utf8mb4 
+COLLATE utf8mb4_unicode_ci;
+
+-- Prepnutie na prácu s touto databázou
+USE `pizzadatabaza`;
+
+-- 2. Vytvorenie tabuľky pre pizze
+CREATE TABLE IF NOT EXISTS `pizze` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `nazov` VARCHAR(150) NOT NULL,
+    `popis` TEXT NOT NULL,
+    `obrazok` VARCHAR(255) NOT NULL,
+    `cena` DECIMAL(5, 2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 3. Vytvorenie tabuľky pre kontaktné správy
+CREATE TABLE IF NOT EXISTS `kontakty` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `meno` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(150) NOT NULL,
+    `predmet` VARCHAR(200) NOT NULL,
+    `sprava` TEXT NOT NULL,
+    `datum` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 4. Vloženie ukážkových dát (pízz), aby web fungoval hneď po spustení
+INSERT INTO `pizze` (`nazov`, `popis`, `obrazok`, `cena`) VALUES
+('Margherita', 'Paradajkový základ, mozzarella, čerstvá bazalka, olivový olej', 'gallery-img1.jpg', 6.50),
+('Prosciutto e Funghi', 'Paradajkový základ, mozzarella, kvalitná šunka, šampiňóny', 'gallery-img2.jpg', 7.90),
+('Diavola', 'Paradajkový základ, mozzarella, pikantná talianska saláma, feferóny', 'gallery-img3.jpg', 8.20);
